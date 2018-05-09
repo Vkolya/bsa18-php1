@@ -8,6 +8,11 @@ class MarketHtmlPresenter
 {
     public function present(CoinMarket $market): string
     {
-        // @todo
+        $html = '<ul>';
+        foreach ($market->getCurrencies() as $currency) {
+            $html .= '<li><img src="' . $currency->getLogoUrl() . '">'.$currency->getName().': '.$currency->getDailyPrice().'</li>';
+        }
+        $html .= '</ul>';
+        return $html;
     }
 }

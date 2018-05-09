@@ -4,8 +4,18 @@ namespace Cryptocurrency\Task2;
 
 class EmojiGenerator
 {
+    private $emojis = [
+        "\u{1f680}",
+        "\u{1f683}",
+        "\u{1f684}",
+        "\u{1f685}",
+        "\u{1f687}"
+    ];
+    
     public function generate(): \Generator
     {
-        // @todo
+        foreach ($this->emojis as $emoji) {
+            yield $emoji;
+        }
     }
 }
